@@ -88,6 +88,7 @@ add     ./grafana/config.js /src/grafana/config.js
 
 # Configure nginx and supervisord
 add     ./nginx/nginx.conf /etc/nginx/nginx.conf
+add	.nginx/.htpasswd /etc/nginx/.htpasswd
 add     ./supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 #Configure Cabot
@@ -120,6 +121,7 @@ EXPOSE 8086
 # InfluxDB HTTPS API
 EXPOSE 8084
 
+VOLUME ["/var/lib/graphite/storage", "/var/easydeploy/share/db", "/var/lib/elasticsearch"]
 
 
 # -------- #
