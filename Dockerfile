@@ -125,6 +125,9 @@ EXPOSE 8086
 # InfluxDB HTTPS API
 EXPOSE 8084
 
+# Carbon / Graphite plaintext port
+EXPOSE 2003
+
 VOLUME ["/var/lib/graphite/storage", "/var/easydeploy/share/db", "/var/lib/elasticsearch"]
 
 
