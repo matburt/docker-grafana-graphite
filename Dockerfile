@@ -45,6 +45,9 @@ RUN apt-get update && \
 
 # Install cabot
 RUN git clone https://github.com/shoonoise/cabot.git /cabot
+RUN apt-get remove python-pip
+RUN wget https://raw.github.com/pypa/pip/master/contrib/get-pip.py
+RUN python get-pip.py
 RUN sed -i "s/distribute.*//g" /cabot/requirements.txt
 RUN pip install -r /cabot/requirements.txt
 RUN npm install --no-color -g coffee-script less@1.3 --registry http://registry.npmjs.org/
