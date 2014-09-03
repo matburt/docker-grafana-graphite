@@ -92,7 +92,7 @@ add     ./grafana/config.js /src/grafana/config.js
 
 # Configure nginx and supervisord
 add     ./nginx/nginx.conf /etc/nginx/nginx.conf
-add	.nginx/.htpasswd /etc/nginx/.htpasswd
+add	./nginx/.htpasswd /etc/nginx/.htpasswd
 add     ./supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 #Configure Cabot
