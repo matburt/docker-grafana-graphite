@@ -45,7 +45,7 @@ RUN apt-get update && \
 
 # Install cabot
 RUN git clone https://github.com/shoonoise/cabot.git /cabot
-RUN apt-get remove python-pip
+RUN apt-get -y remove python-pip
 RUN wget https://raw.github.com/pypa/pip/master/contrib/get-pip.py
 RUN python get-pip.py
 RUN sed -i "s/distribute.*//g" /cabot/requirements.txt
