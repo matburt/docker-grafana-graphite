@@ -1,6 +1,6 @@
 #! /bin/bash
 
-docker kill kamon-grafana-dashboard
-docker rm kamon-grafana-dashboard
+docker kill ogs-grafana-dashboard
+docker rm ogs-grafana-dashboard
 
-docker run -d -v /etc/localtime:/etc/localtime:ro -p 80:80 -p 8125:8125/udp -p 8126:8126 --name kamon-grafana-dashboard kamon/grafana_graphite
+docker run -d -v /etc/localtime:/etc/localtime:ro -v /var/docker_storage/statsd_graphite/graphite_storage:/var/lib/graphite/storage -v /var/docker_storage/statsd_graphite/easydeploy_db:/var/easydeploy/share/db -v /var/docker_storage/statsd_graphite/elasticsearch:/var/lib/elasticsearch -p 15080:80 -p 8125:8125/udp -p 8126:8126 -p 2003:2003 --name ogs-grafana-dashboard kamon/grafana_graphite
